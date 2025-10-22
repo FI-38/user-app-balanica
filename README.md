@@ -1,4 +1,4 @@
-# user-app-wilson
+# user-app
 Dies ist ein express.js projekt mit einem pug template,
 
 ```bash
