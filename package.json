@@ -21,11 +21,11 @@
   "author": "j23d",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.8",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.7",
-    "cookies-parser": "^1.2.0",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "express-session": "^1.18.2",

@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/bootstrap.css")
+    link(rel="stylesheet", href="/css/style.css")
+    block styles
+  body
+    include ../partials/header
+    
+    main.container
+      if success_msg && success_msg.length > 0
+        .alert.alert-success= success_msg
+  
+      if error_msg && error_msg.length > 0
+        .alert.alert-danger= error_msg
+
+      block content
+
+    include ../partials/footer
+
+    script(src="/js/bootstrap.js")
+    script(src="/js/app.js")
+    block scripts

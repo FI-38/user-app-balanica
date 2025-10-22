@@ -1,0 +1,28 @@
+extends layouts/main
+ 
+block content
+  .container.mt-5
+    h1 #{title}
+ 
+    if users.length === 0
+      p.alert.alert-info Keine Benutzer gefunden.
+    else
+      .table-responsive
+        table.table.table-striped
+          thead
+            tr
+              th ID
+              th Username
+              th Name
+              th E-Mail
+              th Registriert am
+          tbody
+            each user in users
+              tr
+                td #{user.id}
+                td #{user.username}
+                td #{user.name}
+                td #{user.email}
+                td #{new Date(user.created_at).toLocaleDateString('de-DE')}
+ 
+      p.text-muted Insgesamt #{users.length} Benutzer

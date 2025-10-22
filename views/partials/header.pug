@@ -1,0 +1,29 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    a.navbar-brand(href="/") UserApp
+    button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav.me-auto
+        li.nav-item
+          a.nav-link(href="/") Home
+        li.nav-item
+          a.nav-link(href="/about") About
+        li.nav-item
+          a.nav-link(href="/contact") Contact
+      
+      ul.navbar-nav
+        if user
+          li.nav-item
+            a.nav-link(href="/users") Benutzer
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false")
+              | Willkommen, #{user.username}
+            ul.dropdown-menu.dropdown-menu-end(aria-labelledby="navbarDropdown")
+              li
+                a.dropdown-item(href="/logout") Abmelden
+        else
+          li.nav-item
+            a.nav-link(href="/login") Anmelden
+          li.nav-item
+            a.nav-link(href="/register") Registrieren

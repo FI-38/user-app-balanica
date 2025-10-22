@@ -1,0 +1,29 @@
+extends layouts/main
+
+block content
+  .container.mt-5
+    .row.justify-content-center
+      .col-md-6
+        .card
+          .card-header
+            h3 Login
+          .card-body
+            if success_msg && success_msg.length > 0
+              .alert.alert-success= success_msg
+            
+            if error_msg && error_msg.length > 0
+              .alert.alert-danger= error_msg
+
+            form(action="/login" method="POST")
+              .mb-3
+                label.form-label(for="username") Benutzername
+                input.form-control(type="text", id="username", name="username", required)
+              .mb-3
+                label.form-label(for="password") Passwort
+                input.form-control(type="password", id="password", name="password", required)
+              button.btn.btn-primary.w-100(type="submit") Anmelden
+            
+            .mt-3.text-center
+              p
+                | Noch kein Konto? 
+                a(href="/register") Registrieren

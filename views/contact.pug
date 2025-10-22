@@ -1,0 +1,20 @@
+extends layouts/main
+
+block content
+    h1 Kontakt
+    p Schreiben Sie uns eine Nachricht:
+
+    form(action="/contact" method="POST")
+      .mb-3
+        label.form-label(for="name") Name
+        input#name.form-control(type="text" name="name" required)
+
+      .mb-3
+        label.form-label(for="email") E-Mail
+        input#email.form-control(type="email" name="email" required)
+
+      .mb-3
+        label.form-label(for="message") Nachricht
+        textarea#message.form-control(name="message" rows="4" required)
+
+      button.btn.btn-primary(type="submit") Absenden
